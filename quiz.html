@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/quiz.css">
+    <title></title>
+</head>
+<body>
+    <header class="quiz-header"></header>
+        <div class="logo">
+            <img id="epicodeLogo" src="assets/img/epicode_logo.png" alt="epicode_logo">
+        </div>
+        <div class="timer">
+            <span id="timer-label">SECONDS</span>
+            <div class="timer-circle">
+                <span id="timer-value">16</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="quiz-content">
+        <section class="question-section">
+            <h2>How can I create a <span class="highlight">checkbox</span> in HTML?</h2>
+        </section>
+
+        <section class="answers-section">
+            <button class="answer-option"> &lt;input type="check"&gt; </button>
+            <button class="answer-option correct"> &lt;input type="checkbox"&gt; </button>
+            <button class="answer-option"> &lt;checkbox&gt; </button>
+            <button class="answer-option"> &lt;input type="button"&gt; </button>
+        </section>
+
+        <section class="footer-section">
+            <p>QUESTION <span id="current-question">1</span> / <span id="total-questions">10</span></p>
+        </section>
+    </main>
+</body>
+</html>

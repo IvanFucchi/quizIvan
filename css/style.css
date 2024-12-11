@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
+
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0D0C2D; /* Fallback per quando l'immagine non si carica */
+    background-image: url('../assets/img/bg.jpg'); /* Percorso dell'immagine */
+    background-repeat: no-repeat; /* Evita ripetizioni */
+    background-position: center center; /* Centra l'immagine */
+    background-attachment: fixed; /* Fissa l'immagine durante lo scorrimento */
+    background-size: cover; /* Adatta l'immagine per coprire tutto il viewport */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+header.header {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed; /* Fissa il logo in alto */
+    top: 0;
+    left: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+    text-align: left;
+    margin-top: 200px;
+    /* background: rgba(0, 0, 0, 0.8); */
+    /* border-radius: 15px; */
+    /* padding: 20px; */
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); */
+}
+
+/* Logo */
+
+
+#epicodeLogo {
+    margin-left: 130px;
+    margin-top: 40px;
+    width: 160px;
+
+}
+
+
+
+.header {
+    text-align: left; /* Allinea tutto a sinistra */
+    margin-bottom: 20px; /* Spaziatura sotto il contenitore */
+}
+
+/* Stile per l'H1 */
+.header h1 {
+    font-size: 60px; /* Dimensione del titolo principale */
+    font-weight: normal; /* Peso normale */
+    margin: 0; /* Rimuovi margini predefiniti */
+    line-height: 1.2; /* Migliora la spaziatura tra le righe */
+}
+
+/* Stile per lo span sotto H1 */
+.header .highlight {
+    display: block; /* Lo span si comporta come un blocco */
+    font-size: 60px; /* Dimensione più piccola rispetto a H1 */
+    font-weight: bold; /* Grassetto per il sottotitolo */
+    color: inherit; /* Mantiene il colore coerente */
+    margin-top: -5px; /* Riduce la distanza tra H1 e lo span */
+}
+
+
+
+
+.instructions {
+    font-family: 'Inter';
+}
+
+/* Instructions */
+.instructions h2 {
+    font-size: 28px;
+    color: #D20094;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.instructions ul {
+    list-style: disc;
+    padding: 0;
+    margin: 50px 25px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.instructions ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.instructions .highlight {
+    font-weight: bold;
+}
+
+/* Agreement */
+.agreement {
+    font-family: 'Inter';
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+.agreement input {
+    margin-right: 10px;
+    background-color: transparent;
+    border: solid 1px white;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none; /* Per compatibilità con Safari */
+    width: 20px;
+    height: 20px;
+    border: 2px solid white; /* Bordo bianco */
+    background: transparent; /* Sfondo trasparente */
+    vertical-align: middle;
+    cursor: pointer; /* Indica che è cliccabile */
+    transition: all 0.3s ease; /* Transizione per un effetto più fluido */
+}
+
+label {
+    font-size: 16px;
+    color: white;
+}
+
+input[type="checkbox"]:checked {
+    background: white;
+    border-color: white;
+    position: relative;
+}
+
+.proceed-section button {
+    margin-left: 100px;
+    background: #00FFFF;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 1px;
+    cursor: not-allowed;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Stato abilitato del bottone */
+.proceed-section button:enabled {
+    cursor: pointer; /* Cambia il cursore */
+    opacity: 1; /* Rimuove la trasparenza */
+    background: #00FFFF; /* Colore evidenziato */
+    box-shadow: 0 0 20px 5px  rgba(0, 255, 255, 0.5); /* Ombra più pronunciata */
+}
+
+/* Hover per il bottone abilitato */
+.proceed-section button:hover:enabled {
+    background: #00D4E8; /* Leggera variazione di colore */
+    transform: scale(1.05); /* Leggera espansione al passaggio del mouse */
+}

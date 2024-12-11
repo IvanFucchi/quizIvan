@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Exam</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img id="epicodeLogo" src="assets/img/epicode_logo.png" alt="epicode_logo">
+        </div>
+    </header>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+        
+        <!-- Title -->
+        </div>
+        <section class="header">
+            <h1>Welcome to</h1>
+            <span class="highlight">your exam</span>
+        </section>
+        
+
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>
+                We don’t expect most engineers to know the answers to all of these<br>
+                 questions, so don’t worry if you’re unsure of a few of them.
+            </p>
+            <ul>
+                <li>Each question is <span class="highlight">timed</span> and can only be <span class="highlight">answered once</span>.</li>
+                <li>Changing browser tab or opening other windows will <span class="highlight">invalidate the question</span>.</li>
+                <li>This exam will take approx. <span class="highlight">0-5 minutes</span>.</li>
+            </ul>
+        </div>
+        <section class="proceed-section">
+            <label class="agreement">
+                <input type="checkbox" id="agree">
+                I promise to answer myself without help from anyone
+            </label>
+            <a href="quiz.html">
+            <button id="proceed" disabled>PROCEED</button>
+            </a>
+        </section>
+
+
+</body>
+
+<script> 
+    // Rendi il pulsante PROCEED attivo solo se la checkbox è selezionata
+document.getElementById("agree").addEventListener("change", function () {
+const proceedButton = document.getElementById("proceed");
+proceedButton.disabled = !this.checked; // Abilita solo se la checkbox è spuntata
+});
+
+</script>
+</html>
