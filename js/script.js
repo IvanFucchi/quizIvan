@@ -98,4 +98,77 @@ const questions = [
     },
   ];
 
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+  const totalQuestions = questions.length;
+  
+  const showQuestion = () => {
+      const question = questions[currentQuestionIndex];
+  
+      // Aggiorna il testo della domanda
+      document.querySelector(".question-section h2").innerHTML = question.question;
+  
+      // Aggiorna il contatore delle domande esistente
+      document.getElementById("current-question").textContent = currentQuestionIndex + 1;
+      document.getElementById("total-questions").textContent = `/ ${totalQuestions}`;
+  
+      const answersSection = document.querySelector(".answers-section");
+      answersSection.innerHTML = ""; // Pulizia delle risposte precedenti
+  
+      // Miscelazione casuale delle risposte
+      const allAnswers = [question.correct_answer, ...question.incorrect_answers].sort(() => Math.random() - 0.5);
+  
+      allAnswers.forEach(answer => {
+          const button = document.createElement("button");
+          button.className = "answer-option";
+          button.textContent = answer;
+  
+          // Gestore clic risposta
+          button.onclick = () => handleAnswer(answer === question.correct_answer);
+  
+          answersSection.appendChild(button);
+      });
+  };
+  
+  const handleAnswer = (isCorrect) => {
+      if (isCorrect) score++; // Incrementa il punteggio se la risposta è corretta
+      goToNextQuestion();
+  };
+  
+  const goToNextQuestion = () => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < totalQuestions) {
+          clearTimeout(timer);
+          startTimer();
+          showQuestion();
+      } else {
+          // Salva il punteggio in sessionStorage per usarlo nella pagina dei risultati
+          sessionStorage.setItem("score", score);
+          sessionStorage.setItem("totalQuestions", totalQuestions);
+  
+          // Reindirizza alla pagina dei risultati
+          window.location.href = "results.html";
+      }
+  };
+  
+  const startTimer = () => {
+      let timeLeft = 30; // Tempo limite per ogni domanda
+      const timerElement = document.getElementById("timer-value");
+      timerElement.textContent = timeLeft;
+  
+      timer = setInterval(() => {
+          timeLeft--;
+          timerElement.textContent = timeLeft;
+          if (timeLeft <= 0) {
+              clearInterval(timer);
+              goToNextQuestion(); // Passa automaticamente alla prossima domanda
+          }
+      }, 1000);
+  };
+  
+  // Inizializzazione
+  showQuestion();
+  startTimer();
+  
   
