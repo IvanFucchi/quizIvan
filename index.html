@@ -49,16 +49,18 @@
             <button id="proceed" disabled>PROCEED</button>
             </a>
         </section>
+    
+     <script> 
+            // Rendi il pulsante PROCEED attivo solo se la checkbox è selezionata
+        document.getElementById("agree").addEventListener("change", function () {
+        const proceedButton = document.getElementById("proceed");
+        proceedButton.disabled = !this.checked; // Abilita solo se la checkbox è spuntata
+        });
+        
+     </script>    
 
 
 </body>
 
-<script> 
-    // Rendi il pulsante PROCEED attivo solo se la checkbox è selezionata
-document.getElementById("agree").addEventListener("change", function () {
-const proceedButton = document.getElementById("proceed");
-proceedButton.disabled = !this.checked; // Abilita solo se la checkbox è spuntata
-});
 
-</script>
 </html>
